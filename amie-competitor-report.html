@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تحليل منافسي a'mie | الإعلانات النشطة في السعودية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000000;--bg-2:#070809;--card:#0c0e10;--card-2:#101316;
+  --line:#1c2024;--line-2:#262b30;--txt:#f3f5f4;--muted:#9aa3a0;--muted-2:#6c7570;
+  --accent:#e8a0bf;--accent-d:#c47a9e;--gold:#d8b15a;--gold-2:#f0d28a;
+  --danger:#ff5d5d;--blue:#5aa9ff;--meta:#1877f2;--glow:0 0 40px rgba(232,160,191,.18);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:'Tajawal',sans-serif;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(900px 500px at 85% -5%,rgba(232,160,191,.10),transparent 60%),radial-gradient(700px 500px at 0% 100%,rgba(216,177,90,.06),transparent 55%);pointer-events:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+a{color:inherit;text-decoration:none}
+
+/* HERO */
+.hero{padding:86px 0 54px;text-align:center}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--gold-2);border:1px solid var(--line-2);padding:7px 16px;border-radius:99px;background:var(--card)}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero h1{font-family:'Cairo';font-weight:900;font-size:clamp(30px,5.4vw,56px);line-height:1.25;margin:24px 0 14px;background:linear-gradient(180deg,#fff 30%,#c4a0b0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 b{background:linear-gradient(135deg,var(--accent),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-desc{font-size:16px;color:var(--muted);max-width:700px;margin:0 auto}
+.meta-chips{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+.chip{font-size:11.5px;font-weight:600;padding:5px 14px;border-radius:99px;border:1px solid var(--line-2);background:var(--card);color:var(--muted)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:46px 0}
+.stat{background:linear-gradient(180deg,var(--card),var(--bg-2));border:1px solid var(--line);border-radius:18px;padding:24px 14px;text-align:center}
+.stat .n{font-family:'Cairo';font-weight:900;font-size:38px;background:linear-gradient(135deg,#fff,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .label{font-size:12.5px;color:var(--muted);margin-top:4px}
+
+/* SECTION HEADS */
+.sec-title{font-family:'Cairo';font-weight:900;font-size:26px;margin:50px 0 8px;color:var(--txt)}
+.sec-sub{font-size:14px;color:var(--muted);margin-bottom:24px}
+
+/* METHODOLOGY */
+.note{border-radius:16px;padding:22px 24px;border:1px solid var(--line-2);background:linear-gradient(180deg,rgba(216,177,90,.06),transparent);margin-bottom:30px}
+.note-list{list-style:none;padding:0}
+.note-list li{font-size:14.5px;color:var(--muted);display:flex;gap:11px;align-items:flex-start;margin-bottom:10px}
+.tick{flex-shrink:0;width:21px;height:21px;border-radius:6px;display:grid;place-items:center;font-size:12px;font-weight:900}
+.tick.y{background:rgba(22,196,127,.15);color:#16c47f;border:1px solid rgba(22,196,127,.3)}
+.tick.n{background:rgba(255,93,93,.12);color:var(--danger);border:1px solid rgba(255,93,93,.3)}
+.tick.p{background:rgba(232,160,191,.14);color:var(--accent);border:1px solid rgba(232,160,191,.3)}
+
+/* COMPETITOR CARDS */
+.comp{background:linear-gradient(180deg,var(--card),var(--bg-2));border:1px solid var(--line);border-radius:22px;margin-bottom:26px;overflow:hidden}
+.comp-top{display:flex;align-items:center;gap:16px;padding:22px 24px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.rank{font-family:'Cairo';font-weight:900;font-size:20px;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,var(--card-2),#000);border:1px solid var(--line-2);color:var(--gold-2)}
+.comp-name{font-family:'Cairo';font-weight:700;font-size:18px}
+.comp-domain{font-size:13px;color:var(--muted-2);margin-right:auto}
+.badge{font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:99px}
+.badge.direct{color:var(--accent);background:rgba(232,160,191,.12);border:1px solid rgba(232,160,191,.28)}
+.badge.indirect{color:var(--gold-2);background:rgba(216,177,90,.12);border:1px solid rgba(216,177,90,.28)}
+.platform-counts{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;width:100%}
+.pc{font-size:11.5px;font-weight:700;padding:4px 11px;border-radius:8px;border:1px solid var(--line-2)}
+.pc.google{color:#f0d28a}
+.pc.meta{color:#7db3ff;border-color:rgba(24,119,242,.35);background:rgba(24,119,242,.08)}
+.pc.zero{color:var(--muted-2);opacity:.5}
+.format-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;width:100%}
+.ftag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:6px;background:var(--card-2);color:var(--muted);border:1px solid var(--line)}
+
+/* PRICE COMPARISON */
+.price-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;width:100%;align-items:center}
+.price-tag{font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:6px}
+.price-tag.competitor{color:var(--muted);border:1px solid var(--line-2);background:var(--card-2)}
+.price-tag.amie{color:var(--accent);border:1px solid rgba(232,160,191,.35);background:rgba(232,160,191,.08)}
+.price-tag .cur{font-size:9px;color:var(--muted-2);font-weight:500}
+.price-vs{font-size:10px;color:var(--muted-2);font-weight:600}
+.price-verdict{font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:6px}
+.price-verdict.cheaper{color:#16c47f;background:rgba(22,196,127,.1);border:1px solid rgba(22,196,127,.25)}
+.price-verdict.similar{color:var(--gold-2);background:rgba(216,177,90,.1);border:1px solid rgba(216,177,90,.25)}
+.price-verdict.higher{color:var(--danger);background:rgba(255,93,93,.08);border:1px solid rgba(255,93,93,.2)}
+
+.comp-body{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:18px 24px 24px}
+
+/* AD REPLICA */
+.adrep{background:#fff;border-radius:14px;padding:16px;color:#202124;direction:rtl;font-family:'Tajawal';box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.adrep .ad-label{font-size:10px;color:#70757a;font-weight:700;letter-spacing:1px;margin-bottom:4px}
+.adrep .ad-domain{font-size:12px;color:#202124;margin-bottom:2px}
+.adrep .title{color:#1a0dab;font-size:16px;margin:3px 0 5px;text-align:right;font-weight:700;line-height:1.4}
+.adrep .desc{font-size:13px;color:#4d5156;text-align:right;line-height:1.5}
+.adrep-note{font-size:10px;color:#999;margin-top:8px;text-align:center;font-style:italic}
+
+/* ANALYSIS */
+.an h4.brief{color:var(--gold-2);font-family:'Cairo';font-size:13px;font-weight:700}
+.an h4.rec{color:var(--accent);font-family:'Cairo';font-size:13px;margin-top:16px;font-weight:700}
+.an p{font-size:14px;color:var(--muted);line-height:1.7}
+
+.proofrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.proof{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;padding:9px 15px;border-radius:10px;transition:.2s}
+.proof:hover{transform:translateY(-2px)}
+.proof.google{color:#16c47f;border:1px solid rgba(22,196,127,.35);background:rgba(22,196,127,.07)}
+.proof.meta{color:#7db3ff;border:1px solid rgba(24,119,242,.4);background:rgba(24,119,242,.09)}
+
+/* TABLE */
+.table-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--line);margin:30px 0}
+table{width:100%;border-collapse:collapse;min-width:780px}
+th,td{padding:14px 16px;text-align:right;font-size:14px;border-bottom:1px solid var(--line)}
+th{background:var(--card-2);font-family:'Cairo';font-weight:700;color:var(--muted);font-size:12.5px}
+td{color:var(--muted)}
+tr:last-child td{border-bottom:none}
+.highlight-row{background:rgba(232,160,191,.04)}
+
+/* INACTIVE */
+.inactive-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.inactive-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.inactive-card .ic-name{font-family:'Cairo';font-weight:700;font-size:15px}
+.inactive-card .ic-domain{font-size:12px;color:var(--muted-2)}
+.inactive-card .ic-note{font-size:13px;color:var(--muted);margin-top:6px}
+
+/* TAKEAWAYS */
+.takeaways{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.tk{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.tk .tk-icon{font-size:24px;margin-bottom:8px}
+.tk h4{font-family:'Cairo';font-weight:700;font-size:14px;color:var(--txt);margin-bottom:6px}
+.tk p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);margin-top:50px;padding:34px 0;text-align:center}
+footer p{font-size:12.5px;color:var(--muted-2)}
+footer .brand{font-family:'Cairo';font-weight:700;color:var(--accent);font-size:14px;margin-top:6px}
+
+/* RESPONSIVE */
+@media(max-width:820px){
+  .comp-body{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .takeaways{grid-template-columns:1fr}
+  .inactive-list{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .stats{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:28px}
+}
+
+/* ANIMATION */
+.fade{opacity:0;transform:translateY(18px);transition:.7s}
+.fade.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker"><span class="dot"></span> تقرير تحليل المنافسين</span>
+    <h1>منافسو <b>a'mie</b><br>الذين يُشغّلون إعلانات نشطة في السعودية</h1>
+    <p class="hero-desc">تحليل شامل للإعلانات النشطة للمنافسين المباشرين وغير المباشرين في قطاع العناية الطبيعية بالجسم والبشرة في المملكة العربية السعودية</p>
+    <div class="meta-chips">
+      <span class="chip">المنطقة: المملكة العربية السعودية (SA)</span>
+      <span class="chip">المصادر: Google Ads Transparency Center + Meta Ad Library</span>
+      <span class="chip">تاريخ السحب: 2 سبتمبر 2026</span>
+      <span class="chip">المنافسون النشطون: 6 من 8</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ═══════════════════ STATS ═══════════════════ -->
+<div class="stats fade">
+  <div class="stat">
+    <div class="n">6</div>
+    <div class="label">نشطون على Google</div>
+  </div>
+  <div class="stat">
+    <div class="n">5</div>
+    <div class="label">نشطون على Meta</div>
+  </div>
+  <div class="stat">
+    <div class="n">~2,362</div>
+    <div class="label">إجمالي الإعلانات</div>
+  </div>
+  <div class="stat">
+    <div class="n">2</div>
+    <div class="label">غير نشطين على أي منصة</div>
+  </div>
+  <div class="stat">
+    <div class="n">~1,060</div>
+    <div class="label">أعلى منافس (Bath & Body Works)</div>
+  </div>
+</div>
+
+<!-- ═══════════════════ METHODOLOGY ═══════════════════ -->
+<div class="sec-title fade">المنهجية والشفافية</div>
+<div class="note fade">
+  <ul class="note-list">
+    <li><span class="tick y">&#10003;</span><span><strong>Google Ads Transparency Center:</strong> تم الوصول بنجاح. تم فحص كل نطاق (domain) منافس مع تطبيق فلتر المنطقة SA (المملكة العربية السعودية). جميع الأرقام مأخوذة مباشرة من المنصة بتاريخ 2 سبتمبر 2026.</span></li>
+    <li><span class="tick y">&#10003;</span><span><strong>Meta Ad Library:</strong> تم الوصول بنجاح. تم البحث بأسماء العلامات التجارية والنطاقات مع تفعيل فلتر "Active ads" وتحديد الدولة "Saudi Arabia". جميع الأرقام محققة مباشرة.</span></li>
+    <li><span class="tick p">!</span><span><strong>لقطات الشاشة:</strong> لم يتم تضمين لقطات شاشة مباشرة من المنصات. بدلاً من ذلك، تم نسخ نصوص الإعلانات حرفياً وتقديمها كنماذج مُعاد بناؤها (replicas) مع روابط تحقق مباشرة لكل منافس على كلتا المنصتين.</span></li>
+    <li><span class="tick y">&#10003;</span><span><strong>ملاحظة عن العميل:</strong> a'mie (A'MI SA) لديها إعلانات نشطة حالياً على Meta فقط — لا توجد إعلانات على Google Ads Transparency Center. هذا التقرير يركز على المنافسين وليس العميل.</span></li>
+  </ul>
+</div>
+
+<!-- ═══════════════════ ACTIVE COMPETITORS ═══════════════════ -->
+<div class="sec-title fade">المنافسون النشطون</div>
+<div class="sec-sub fade">مرتبون حسب إجمالي الحضور الإعلاني عبر المنصتين</div>
+
+<!-- ──── 1. Bath & Body Works ──── -->
+<div class="comp fade">
+  <div class="comp-top">
+    <div class="rank">1</div>
+    <div class="comp-name">Bath & Body Works Arabia</div>
+    <div class="comp-domain">bathandbodyworks.com.sa</div>
+    <span class="badge indirect">منافس غير مباشر</span>
+    <div class="platform-counts">
+      <span class="pc google">Google: ~800 إعلان</span>
+      <span class="pc meta">Meta: ~260 إعلان</span>
+    </div>
+    <div class="format-tags">
+      <span class="ftag">بحث</span>
+      <span class="ftag">عرض</span>
+      <span class="ftag">فيديو</span>
+      <span class="ftag">Facebook</span>
+      <span class="ftag">Instagram</span>
+      <span class="ftag">Messenger</span>
+    </div>
+    <div class="price-row">
+      <span class="price-tag competitor">هم: 25–159 <span class="cur">ر.س</span></span>
+      <span class="price-vs">مقابل</span>
+      <span class="price-tag amie">a'mie: 39–227 <span class="cur">ر.س</span></span>
+      <span class="price-verdict similar">نطاق مماثل</span>
+    </div>
+  </div>
+  <div class="comp-body">
+    <div class="adrep">
+      <div class="ad-label">منسوخ حرفياً من الإعلان الفعلي — Google Search Ad</div>
+      <div class="ad-domain">bathandbodyworks.com.sa</div>
+      <div class="title">SAR 160 Offer: 2 Large Candles - Buy Now & Pay Later</div>
+      <div class="desc">Get 5 body care for SAR 180 Choose your fave from our lotions and mists Hurry Limited Time · Visit our Store today! · Deal: 2 Candles SAR 160 · Your Fairy Tale Awaits · Hurry: 5 for SAR 180 Only</div>
+      <div class="adrep-note">منسوخ حرفياً من الإعلان الفعلي</div>
+    </div>
+    <div class="an">
+      <h4 class="brief">نبذة عن النشاط الإعلاني</h4>
+      <p>أكبر حضور إعلاني بين جميع المنافسين بإجمالي ~1,060 إعلان. يركزون على عروض الأسعار المُحددة (SAR 160 للشموع، 5 منتجات بـ SAR 180) مع رسائل الإلحاح "Hurry, Limited Time". يستخدمون نظام Buy Now Pay Later كميزة تنافسية. يغطون كل المنصات بكثافة عالية مع تنوع في الصيغ بين بحث وعرض وفيديو.</p>
+      <h4 class="rec">التوصية لـ a'mie</h4>
+      <p>Bath & Body Works يبيع كمية ورائحة — بينما a'mie تبيع جودة طبيعية وسلامة على البشرة. ركزي على رسالة "ما لا يخبرك به Bath & Body Works عن المكونات الكيميائية" واستخدمي شهادات Cruelty-Free والمكونات الطبيعية كعنصر تمييز. إعلاناتهم بالإنجليزية — فرصة لـ a'mie للسيطرة على المحتوى العربي الأصيل.</p>
+    </div>
+  </div>
+  <div class="proofrow" style="padding:0 24px 20px">
+    <a href="https://adstransparency.google.com/?region=SA&domain=bathandbodyworks.com.sa" target="_blank" class="proof google">&#128270; تحقق على Google</a>
+    <a href="https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=SA&q=Bath%20%26%20Body%20Works&search_type=keyword_unordered" target="_blank" class="proof meta">&#128270; تحقق على Meta</a>
+  </div>
+</div>
+
+<!-- ──── 2. Faces / وجوه ──── -->
+<div class="comp fade">
+  <div class="comp-top">
+    <div class="rank">2</div>
+    <div class="comp-name">وجوه — Faces Beauty Middle East</div>
+    <div class="comp-domain">faces.sa</div>
+    <span class="badge indirect">منافس غير مباشر</span>
+    <div class="platform-counts">
+      <span class="pc google">Google: ~800 إعلان</span>
+      <span class="pc meta">Meta: ~33 إعلان</span>
+    </div>
+    <div class="format-tags">
+      <span class="ftag">بحث</span>
+      <span class="ftag">عرض</span>
+      <span class="ftag">Facebook</span>
+      <span class="ftag">Instagram</span>
+      <span class="ftag">Threads</span>
+    </div>
+    <div class="price-row">
+      <span class="price-tag competitor">هم: 65–1,399 <span class="cur">ر.س</span></span>
+      <span class="price-vs">مقابل</span>
+      <span class="price-tag amie">a'mie: 39–227 <span class="cur">ر.س</span></span>
+      <span class="price-verdict cheaper">a'mie أقل سعراً</span>
+    </div>
+  </div>
+  <div class="comp-body">
+    <div class="adrep">
+      <div class="ad-label">منسوخ حرفياً من الإعلان الفعلي — Google Search Ad</div>
+      <div class="ad-domain">faces.sa</div>
+      <div class="title">هدايا مجانية مع كل طلب - تسوق مجموعة ديور</div>
+      <div class="desc">اشتر الآن وادفع لاحقاً على دفعات وبدون رسوم. استمتع بتوصيل بنفس اليوم أو اليوم التالي. اكتشف...</div>
+      <div class="adrep-note">منسوخ حرفياً من الإعلان الفعلي</div>
+    </div>
+    <div class="an">
+      <h4 class="brief">نبذة عن النشاط الإعلاني</h4>
+      <p>ثاني أكبر حضور على Google (~800 إعلان) مع تركيز على العلامات الفاخرة (ديور، توم فورد). يستخدمون "هدايا مجانية" وتوصيل نفس اليوم كمحفزات. على Meta يستخدمون تقنية Layla AI للتوصيات الشخصية للبشرة. تقييمهم 4.3 من 1,449 تقييم. يمزجون بين العربية والإنجليزية.</p>
+      <h4 class="rec">التوصية لـ a'mie</h4>
+      <p>وجوه يبيع علامات عالمية فاخرة بأسعار مرتفعة — a'mie يمكنها المنافسة على شريحة "الباحثات عن بديل طبيعي وأقل سعراً" مع التأكيد على أن المنتج سعودي محلي وآمن للبشرة الحساسة. فكرة Layla AI تستحق الاقتباس — أداة توصية بشرة على موقع a'mie ستكون ميزة تنافسية قوية.</p>
+    </div>
+  </div>
+  <div class="proofrow" style="padding:0 24px 20px">
+    <a href="https://adstransparency.google.com/?region=SA&domain=faces.sa" target="_blank" class="proof google">&#128270; تحقق على Google</a>
+    <a href="https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=SA&q=%D9%88%D8%AC%D9%88%D9%87%20Faces&search_type=keyword_unordered&country=SA&active_status=active" target="_blank" class="proof meta">&#128270; تحقق على Meta</a>
+  </div>
+</div>
+
+<!-- ──── 3. Nice One ──── -->
+<div class="comp fade">
+  <div class="comp-top">
+    <div class="rank">3</div>
+    <div class="comp-name">نايس ون — Nice One</div>
+    <div class="comp-domain">niceonesa.com</div>
+    <span class="badge indirect">منافس غير مباشر</span>
+    <div class="platform-counts">
+      <span class="pc google">Google: ~600 إعلان</span>
+      <span class="pc meta">Meta: ~45 إعلان</span>
+    </div>
+    <div class="format-tags">
+      <span class="ftag">بحث</span>
+      <span class="ftag">عرض</span>
+      <span class="ftag">فيديو</span>
+      <span class="ftag">Facebook</span>
+      <span class="ftag">Instagram</span>
+      <span class="ftag">Threads</span>
+    </div>
+    <div class="price-row">
+      <span class="price-tag competitor">هم: 6–185 <span class="cur">ر.س</span></span>
+      <span class="price-vs">مقابل</span>
+      <span class="price-tag amie">a'mie: 39–227 <span class="cur">ر.س</span></span>
+      <span class="price-verdict higher">سوق متعدد بأسعار أقل</span>
+    </div>
+  </div>
+  <div class="comp-body">
+    <div class="adrep">
+      <div class="ad-label">منسوخ حرفياً من الإعلان الفعلي — Google Search Ad</div>
+      <div class="ad-domain">niceonesa.com</div>
+      <div class="title">هارتس | تسوقي افضل مستحضرات التجميل من هارتس | نايس ون السعودية</div>
+      <div class="desc">اكتشفي أفضل مستحضرات التجميل والعطور والعناية بالجمال في نايس ون. أقوى العروض والخصومات دايم...</div>
+      <div class="adrep-note">منسوخ حرفياً من الإعلان الفعلي</div>
+    </div>
+    <div class="an">
+      <h4 class="brief">نبذة عن النشاط الإعلاني</h4>
+      <p>متجر تجميل شامل بحضور قوي جداً على Google (~600 إعلان). على Meta يستخدمون مزيجاً من إعلانات المتجر المباشرة وشراكات المؤثرين (GLAM TUTORIAL, Muneera Altamimi). يركزون على العروض والخصومات المستمرة مع CTAs متنوعة بين "Shop Now" و"Order now".</p>
+      <h4 class="rec">التوصية لـ a'mie</h4>
+      <p>نايس ون يجمع مئات العلامات — لكن ليس لديه هوية طبيعية. a'mie يمكنها التقدم للبيع عبر نايس ون كقناة توزيع إضافية (marketplace presence) مع الحفاظ على متجرها المستقل كوجهة للمنتجات الطبيعية الحصرية. أيضاً استراتيجية المؤثرين التي يستخدمها نايس ون على Meta تستحق التبني.</p>
+    </div>
+  </div>
+  <div class="proofrow" style="padding:0 24px 20px">
+    <a href="https://adstransparency.google.com/?region=SA&domain=niceonesa.com" target="_blank" class="proof google">&#128270; تحقق على Google</a>
+    <a href="https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=SA&q=Nice%20One%20%D9%86%D8%A7%D9%8A%D8%B3%20%D9%88%D9%86&search_type=keyword_unordered" target="_blank" class="proof meta">&#128270; تحقق على Meta</a>
+  </div>
+</div>
+
+<!-- ──── 4. دار الأميرات ──── -->
+<div class="comp fade">
+  <div class="comp-top">
+    <div class="rank">4</div>
+    <div class="comp-name">دار الأميرات — Dar Alamirat</div>
+    <div class="comp-domain">daralamirat.com.sa</div>
+    <span class="badge direct">منافس مباشر</span>
+    <div class="platform-counts">
+      <span class="pc google">Google: ~400 إعلان</span>
+      <span class="pc meta">Meta: ~32 إعلان</span>
+    </div>
+    <div class="format-tags">
+      <span class="ftag">بحث</span>
+      <span class="ftag">عرض</span>
+      <span class="ftag">Facebook</span>
+      <span class="ftag">Instagram</span>
+      <span class="ftag">Messenger</span>
+      <span class="ftag">Audience Network</span>
+    </div>
+    <div class="price-row">
+      <span class="price-tag competitor">هم: 15–300 <span class="cur">ر.س</span></span>
+      <span class="price-vs">مقابل</span>
+      <span class="price-tag amie">a'mie: 39–227 <span class="cur">ر.س</span></span>
+      <span class="price-verdict similar">نطاق مماثل</span>
+    </div>
+  </div>
+  <div class="comp-body">
+    <div class="adrep">
+      <div class="ad-label">منسوخ حرفياً من الإعلان الفعلي — Google Search Ad</div>
+      <div class="ad-domain">daralamirat.com.sa</div>
+      <div class="title">جميع مستلزمات العناية والجمال - عادات أعيادكم بالفرح والجمال</div>
+      <div class="desc">زيوت وسيروم العناية بالشعر لتقوية الجذور ومنع تساقط الشعر - كريمات تصفيق وجه وشعر وجسم... · بلسم لكتيف لعلاج الإكزيما والحكة مع دقيق الشوفان من أفينو - 312 مل · QV كيو في</div>
+      <div class="adrep-note">منسوخ حرفياً من الإعلان الفعلي</div>
+    </div>
+    <div class="an">
+      <h4 class="brief">نبذة عن النشاط الإعلاني</h4>
+      <p>أكبر منافس مباشر من حيث الحضور الإعلاني (~432 إعلان إجمالاً). يقدمون أنفسهم كـ "أكبر تجمع لمنتجات العناية" ويبيعون علامات متعددة (أفينو، QV). على Meta يستخدمون فيديوهات وصور مع عروض B2S (العودة للمدارس) خصم 25%. يغطون كل منصات Meta بما فيها Audience Network.</p>
+      <h4 class="rec">التوصية لـ a'mie</h4>
+      <p>دار الأميرات يبيع منتجات علامات أخرى — بينما a'mie تملك علامتها الخاصة. هذا الفارق الجوهري يجب أن يكون محور الرسالة الإعلانية: "منتجاتنا نصنعها بأنفسنا — نعرف كل مكوّن فيها". ميدان Google Search فارغ تماماً لـ a'mie — إطلاق حملات بحث تستهدف كلمات مثل "عناية طبيعية بالجسم" و"منتجات بشرة آمنة" سيمنحك حضوراً فورياً أمام جمهور دار الأميرات.</p>
+    </div>
+  </div>
+  <div class="proofrow" style="padding:0 24px 20px">
+    <a href="https://adstransparency.google.com/?region=SA&domain=daralamirat.com.sa" target="_blank" class="proof google">&#128270; تحقق على Google</a>
+    <a href="https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=SA&q=%D8%AF%D8%A7%D8%B1%20%D8%A7%D9%84%D8%A3%D9%85%D9%8A%D8%B1%D8%A7%D8%AA&search_type=keyword_unordered" target="_blank" class="proof meta">&#128270; تحقق على Meta</a>
+  </div>
+</div>
+
+<!-- ──── 5. The Body Shop ──── -->
+<div class="comp fade">
+  <div class="comp-top">
+    <div class="rank">5</div>
+    <div class="comp-name">The Body Shop</div>
+    <div class="comp-domain">thebodyshop.com.sa</div>
+    <span class="badge indirect">منافس غير مباشر</span>
+    <div class="platform-counts">
+      <span class="pc google">Google: ~300 إعلان</span>
+      <span class="pc meta">Meta: ~34 إعلان</span>
+    </div>
+    <div class="format-tags">
+      <span class="ftag">بحث</span>
+      <span class="ftag">عرض</span>
+      <span class="ftag">فيديو</span>
+      <span class="ftag">Facebook</span>
+      <span class="ftag">Instagram</span>
+      <span class="ftag">Messenger</span>
+      <span class="ftag">Audience Network</span>
+    </div>
+    <div class="price-row">
+      <span class="price-tag competitor">هم: 35–399 <span class="cur">ر.س</span></span>
+      <span class="price-vs">مقابل</span>
+      <span class="price-tag amie">a'mie: 39–227 <span class="cur">ر.س</span></span>
+      <span class="price-verdict cheaper">a'mie أقل سعراً</span>
+    </div>
+  </div>
+  <div class="comp-body">
+    <div class="adrep">
+      <div class="ad-label">منسوخ حرفياً من الإعلان الفعلي — Meta Ad</div>
+      <div class="ad-domain">thebodyshop.com.sa</div>
+      <div class="title">Don't miss out! Buy 4, Get 2 Free at The Body Shop</div>
+      <div class="desc">Hurry, limited time offer! · معطرات للجسم بسعر 169 ريال في أي فرع لذي بودي شوب · اشتري 4، احصل على 2 مجاناً · اكتشفي روعة العطور ومنتجات العناية بالبشرة والشعر والجسم الفاخرة لدينا</div>
+      <div class="adrep-note">منسوخ حرفياً من الإعلان الفعلي</div>
+    </div>
+    <div class="an">
+      <h4 class="brief">نبذة عن النشاط الإعلاني</h4>
+      <p>علامة عالمية تتبنى نفس قيم a'mie (Cruelty-Free، مكونات طبيعية) لكن بحجم أكبر بكثير. يركزون على عروض الكمية ("اشتري 4 واحصلي على 2 مجاناً") وأسعار ثابتة (معطرات بـ 169 ر.س). يمزجون بين العربية والإنجليزية في إعلاناتهم. حضورهم متوازن بين Google و Meta.</p>
+      <h4 class="rec">التوصية لـ a'mie</h4>
+      <p>The Body Shop هو أقرب منافس من حيث القيم (Cruelty-Free, طبيعي) — لكنه علامة بريطانية بأسعار أعلى. a'mie يمكنها اللعب على وتر "الصنع المحلي السعودي" و"دعم المنتج الوطني" — رسالة قوية جداً في السوق السعودي حالياً مع رؤية 2030. أيضاً أسعار a'mie أكثر تنافسية — استخدمي مقارنات سعرية ذكية في إعلاناتكم.</p>
+    </div>
+  </div>
+  <div class="proofrow" style="padding:0 24px 20px">
+    <a href="https://adstransparency.google.com/?region=SA&domain=thebodyshop.com.sa" target="_blank" class="proof google">&#128270; تحقق على Google</a>
+    <a href="https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=SA&q=thebodyshop.com.sa&search_type=keyword_unordered" target="_blank" class="proof meta">&#128270; تحقق على Meta</a>
+  </div>
+</div>
+
+<!-- ──── 6. رؤى الطبيعة ──── -->
+<div class="comp fade">
+  <div class="comp-top">
+    <div class="rank">6</div>
+    <div class="comp-name">رؤى الطبيعة — Nature's Vision</div>
+    <div class="comp-domain">nv.sa</div>
+    <span class="badge direct">منافس مباشر</span>
+    <div class="platform-counts">
+      <span class="pc google">Google: 32 إعلان</span>
+      <span class="pc meta">Meta: ~26 إعلان</span>
+    </div>
+    <div class="format-tags">
+      <span class="ftag">عرض</span>
+      <span class="ftag">فيديو</span>
+      <span class="ftag">Instagram</span>
+      <span class="ftag">Facebook</span>
+    </div>
+    <div class="price-row">
+      <span class="price-tag competitor">هم: 20–335 <span class="cur">ر.س</span></span>
+      <span class="price-vs">مقابل</span>
+      <span class="price-tag amie">a'mie: 39–227 <span class="cur">ر.س</span></span>
+      <span class="price-verdict similar">نطاق مماثل</span>
+    </div>
+  </div>
+  <div class="comp-body">
+    <div class="adrep">
+      <div class="ad-label">منسوخ حرفياً من الإعلان الفعلي — Meta Ad</div>
+      <div class="ad-domain">nv.sa · رؤى الطبيعة</div>
+      <div class="title">كل منتجات رؤى الطبيعة الطبيعية بخصم 30% لفترة محدودة</div>
+      <div class="desc">عروض العودة للمدارس خصم 30% على جميع المنتجات · اختاري منتجك من الطبيعة · اشتري الآن · Order now</div>
+      <div class="adrep-note">منسوخ حرفياً من الإعلان الفعلي</div>
+    </div>
+    <div class="an">
+      <h4 class="brief">نبذة عن النشاط الإعلاني</h4>
+      <p>أقرب منافس مباشر لـ a'mie — علامة سعودية متخصصة في منتجات العناية الطبيعية بالوجه والجسم والشعر والزيوت. نشطون على كلتا المنصتين بإعلانات عرض وفيديو. يستخدمون عروض موسمية (خصم 30% للعودة للمدارس) مع CTA "Order now". المحتوى بالعربية بالكامل.</p>
+      <h4 class="rec">التوصية لـ a'mie</h4>
+      <p>هذا منافسك الأقرب — نفس الشريحة، نفس القيم، نفس السوق. الفارق يُصنع في التفاصيل: a'mie تتميز بمنتجات التان والعناية بالشفاه (lip care بزبدة المانجو وحمض الهيالورونيك) — وهي فئات لا يغطيها رؤى الطبيعة بنفس العمق. ركزي إعلاناتك على هذه الفئات الحصرية. أيضاً رؤى الطبيعة غائبة عن إعلانات البحث (Google Search) — فرصة ذهبية لـ a'mie للسيطرة على كلمات البحث العربية.</p>
+    </div>
+  </div>
+  <div class="proofrow" style="padding:0 24px 20px">
+    <a href="https://adstransparency.google.com/?region=SA&domain=nv.sa" target="_blank" class="proof google">&#128270; تحقق على Google</a>
+    <a href="https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=SA&q=%D8%B1%D8%A4%D9%89%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D8%A9&search_type=keyword_unordered" target="_blank" class="proof meta">&#128270; تحقق على Meta</a>
+  </div>
+</div>
+
+<!-- ═══════════════════ SUMMARY TABLE ═══════════════════ -->
+<div class="sec-title fade">جدول ملخص</div>
+<div class="table-wrap fade">
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>المنافس</th>
+      <th>النوع</th>
+      <th>Google</th>
+      <th>Meta</th>
+      <th>الإجمالي</th>
+      <th>نطاق الأسعار (ر.س)</th>
+      <th>مقارنة مع a'mie</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Bath & Body Works</td>
+      <td>غير مباشر</td>
+      <td>~800</td>
+      <td>~260</td>
+      <td>~1,060</td>
+      <td>25–159</td>
+      <td style="color:var(--gold-2)">مماثل</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>وجوه Faces</td>
+      <td>غير مباشر</td>
+      <td>~800</td>
+      <td>~33</td>
+      <td>~833</td>
+      <td>65–1,399</td>
+      <td style="color:#16c47f">a'mie أقل</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>نايس ون Nice One</td>
+      <td>غير مباشر</td>
+      <td>~600</td>
+      <td>~45</td>
+      <td>~645</td>
+      <td>6–185</td>
+      <td style="color:var(--danger)">سوق أقل سعراً</td>
+    </tr>
+    <tr class="highlight-row">
+      <td>4</td>
+      <td>دار الأميرات</td>
+      <td>مباشر</td>
+      <td>~400</td>
+      <td>~32</td>
+      <td>~432</td>
+      <td>15–300</td>
+      <td style="color:var(--gold-2)">مماثل</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>The Body Shop</td>
+      <td>غير مباشر</td>
+      <td>~300</td>
+      <td>~34</td>
+      <td>~334</td>
+      <td>35–399</td>
+      <td style="color:#16c47f">a'mie أقل</td>
+    </tr>
+    <tr class="highlight-row">
+      <td>6</td>
+      <td>رؤى الطبيعة</td>
+      <td>مباشر</td>
+      <td>32</td>
+      <td>~26</td>
+      <td>~58</td>
+      <td>20–335</td>
+      <td style="color:var(--gold-2)">مماثل</td>
+    </tr>
+    <tr style="border-top:2px solid var(--accent)">
+      <td>—</td>
+      <td style="color:var(--accent);font-weight:700">a'mie (العميل)</td>
+      <td>—</td>
+      <td>0</td>
+      <td>نشط</td>
+      <td>—</td>
+      <td style="color:var(--accent);font-weight:700">39–227</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ═══════════════════ INACTIVE ═══════════════════ -->
+<div class="sec-title fade">منافسون غير نشطين إعلانياً</div>
+<div class="sec-sub fade">علامات قوية في السوق لكنها لا تُشغّل أي إعلانات حالياً على أي من المنصتين — فرصة لـ a'mie</div>
+
+<div class="inactive-list fade">
+  <div class="inactive-card">
+    <div class="ic-name">نوره الهيلا</div>
+    <div class="ic-domain">norahalheala.sa</div>
+    <div class="price-row" style="margin:8px 0">
+      <span class="price-tag competitor" style="font-size:10.5px">هم: ~25–200 <span class="cur">ر.س</span></span>
+      <span class="price-vs">مقابل</span>
+      <span class="price-tag amie" style="font-size:10.5px">a'mie: 39–227 <span class="cur">ر.س</span></span>
+      <span class="price-verdict similar">نطاق مماثل</span>
+    </div>
+    <div class="ic-note">متجر سعودي متخصص في منتجات العناية الطبيعية 100% — خلطات بشرة وشعر وعطور. حضور قوي عبر المتجر الإلكتروني لكن غائب تماماً عن الإعلانات المدفوعة على Google و Meta. فرصة لـ a'mie: أي استثمار إعلاني الآن سيمنحك أفضلية مباشرة على هذا المنافس.</div>
+  </div>
+  <div class="inactive-card">
+    <div class="ic-name">قلو — Gloww</div>
+    <div class="ic-domain">gloww-sa.com</div>
+    <div class="price-row" style="margin:8px 0">
+      <span class="price-tag competitor" style="font-size:10.5px">هم: ~15–250 <span class="cur">ر.س</span></span>
+      <span class="price-vs">مقابل</span>
+      <span class="price-tag amie" style="font-size:10.5px">a'mie: 39–227 <span class="cur">ر.س</span></span>
+      <span class="price-verdict similar">نطاق مماثل</span>
+    </div>
+    <div class="ic-note">متجر سعودي لمنتجات العناية والتجميل. لا يُشغّل أي إعلانات مدفوعة حالياً على أي منصة. يعتمد على المحتوى العضوي فقط. أسعارهم تبدأ من مستوى اقتصادي (سوق متعدد العلامات). يمثل شريحة المنافسين "النائمين" — لكن حالياً الميدان مفتوح لـ a'mie.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════ TAKEAWAYS ═══════════════════ -->
+<div class="sec-title fade">خلاصات استراتيجية لـ a'mie</div>
+
+<div class="takeaways fade">
+  <div class="tk">
+    <div class="tk-icon">&#127919;</div>
+    <h4>Google Search = أرض بكر</h4>
+    <p>a'mie غائبة تماماً عن Google Ads — بينما المنافسون الكبار (Bath & Body Works, وجوه, نايس ون) يستثمرون بكثافة هناك. إطلاق حملات بحث تستهدف "عناية طبيعية بالجسم"، "منتجات بشرة آمنة"، "كريم جسم طبيعي" سيفتح قناة اكتساب جديدة بالكامل.</p>
+  </div>
+  <div class="tk">
+    <div class="tk-icon">&#128171;</div>
+    <h4>المنافسون المباشرون أضعف إعلانياً</h4>
+    <p>دار الأميرات ورؤى الطبيعة (المنافسون المباشرون) لديهم حضور إعلاني أصغر بكثير من المتاجر الكبيرة. نوره الهيلا وقلو غائبون تماماً. هذا يعني أن زيادة الإنفاق الإعلاني بمقدار معقول ستمنح a'mie المركز الأول بين المنافسين المباشرين.</p>
+  </div>
+  <div class="tk">
+    <div class="tk-icon">&#127466;&#127480;</div>
+    <h4>الهوية السعودية ميزة حقيقية</h4>
+    <p>أغلب المنافسين غير المباشرين علامات أجنبية (Body Shop بريطاني، Bath & Body Works أمريكي). في ظل رؤية 2030 ودعم المنتج المحلي، رسالة "صنع في السعودية" و"علامة سعودية أصيلة" هي ميزة تنافسية لم يستغلها أحد بعد في الإعلانات المدفوعة.</p>
+  </div>
+  <div class="tk">
+    <div class="tk-icon">&#128247;</div>
+    <h4>المؤثرون قناة مثبتة</h4>
+    <p>نايس ون ووجوه يستخدمون شراكات المؤثرين بفاعلية على Meta. a'mie بحاجة لبرنامج مؤثرين مركّز على micro-influencers في نيتش العناية الطبيعية — التكلفة أقل والمصداقية أعلى من المؤثرين الكبار.</p>
+  </div>
+  <div class="tk">
+    <div class="tk-icon">&#128218;</div>
+    <h4>المحتوى العربي أقوى</h4>
+    <p>كثير من إعلانات المنافسين بالإنجليزية أو مزيج. a'mie يمكنها التميز بمحتوى عربي أصيل 100% يخاطب المرأة السعودية بلغتها ولهجتها — هذا يخلق ارتباطاً عاطفياً لا يستطيع Bath & Body Works تحقيقه.</p>
+  </div>
+  <div class="tk">
+    <div class="tk-icon">&#9889;</div>
+    <h4>فئات حصرية غير مُستغلة</h4>
+    <p>منتجات التان (Deep Tan) والعناية بالشفاه بمكونات مثل زبدة المانجو والعسل وحمض الهيالورونيك — فئات تملكها a'mie ولا يغطيها المنافسون المباشرون. حملات إعلانية مخصصة لهذه الفئات ستبني positioning فريد لا يمكن نسخه بسهولة.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="fade">
+  <p>تم سحب البيانات بتاريخ 2 سبتمبر 2026 من Google Ads Transparency Center (region=SA) و Meta Ad Library (country=SA, active_status=active)</p>
+  <p>جميع الأرقام تعكس الإعلانات النشطة وقت السحب وقد تتغير لاحقاً — الروابط المرفقة تتيح إعادة التحقق في أي وقت</p>
+  <div class="brand">تقرير مُعد لصالح a'mie — Best Natural Body Care Products</div>
+</footer>
+
+</div><!-- /wrap -->
+
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.08});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
